@@ -2305,7 +2305,7 @@ static int nand_do_write_ops(struct mtd_info *mtd, loff_t to,
 
 	ops->retlen = ops->len - writelen;
 	if (unlikely(oob))
-		ops->oobretlen = ops->ooblen;
+		ops->oobretlen = ops->ooblen - oobwritelen;
 	return ret;
 }
 
